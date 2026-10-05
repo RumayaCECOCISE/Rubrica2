@@ -1,0 +1,489 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-app: var(--c-app);
+  --color-app-2: var(--c-app-2);
+  --color-surface: var(--c-surface);
+  --color-surface-2: var(--c-surface-2);
+  --color-fg: var(--c-fg);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
+  --color-accent: var(--c-accent);
+  --color-accent-2: var(--c-accent-2);
+  --color-onaccent: var(--c-onaccent);
+  --font-serif: 'Cormorant Garamond', 'Cambria', Georgia, serif;
+  --font-sans: 'DM Sans', 'Calibri', system-ui, sans-serif;
+}
+
+/* ---------------- LIGHT (default) ---------------- */
+:root,
+[data-theme='light'] {
+  --c-app: #F4F2ED;
+  --c-app-2: #EAE7E0;
+  --c-surface: #FFFFFF;
+  --c-surface-2: #F7F5F1;
+  --c-fg: #1B1B20;
+  --c-muted: #5C5C67;
+  --c-line: #D9D5CC;
+  --c-accent: #C0202D;
+  --c-accent-2: #8C1620;
+  --c-onaccent: #FFFFFF;
+  --c-shadow: 0 18px 50px -28px rgba(27, 27, 32, 0.35);
+  --c-dot: rgba(27, 27, 32, 0.55);
+  color-scheme: light;
+}
+
+/* ---------------- DARK ---------------- */
+[data-theme='dark'] {
+  --c-app: #17171B;
+  --c-app-2: #101014;
+  --c-surface: #232329;
+  --c-surface-2: #2A2A31;
+  --c-fg: #FFFFFF;
+  --c-muted: #B9B9C2;
+  --c-line: #3A3A42;
+  --c-accent: #D42E3C;
+  --c-accent-2: #8C1620;
+  --c-onaccent: #FFFFFF;
+  --c-shadow: 0 18px 60px -28px rgba(0, 0, 0, 0.9);
+  --c-dot: rgba(255, 255, 255, 0.5);
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--c-app);
+  color: var(--c-fg);
+  font-family: 'DM Sans', 'Calibri', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* ------------ Logos institucionales (PNG con fondo transparente) ------------ */
+/* El archivo es estático. El tono cromático se obtiene solo con filtros CSS. */
+.institutional-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: filter 0.6s ease;
+}
+
+[data-theme='light'] .institutional-logo {
+  filter: grayscale(1) brightness(0.55) contrast(1.05);
+}
+
+[data-theme='dark'] .institutional-logo {
+  filter: grayscale(1) brightness(2.6) contrast(0.95);
+}
+
+/* Espacio reservado mientras no exista el PNG del logo. */
+.logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0.25rem;
+  border: 1.5px dashed var(--c-line);
+  border-radius: 0.75rem;
+  color: var(--c-muted);
+  text-align: center;
+}
+
+.soft-shadow {
+  box-shadow: var(--c-shadow);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--c-accent) 28%, transparent);
+  color: var(--c-fg);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--c-app); }
+::-webkit-scrollbar-thumb { background: var(--c-line); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-accent); }
+
+/* ------------ Escala tipográfica para proyección ------------ */
+.slide-title {
+  font-size: clamp(2.4rem, 4.4vw, 4.8rem);
+  line-height: 1.02;
+}
+
+.slide-eyebrow {
+  font-size: clamp(0.78rem, 0.95vw, 0.95rem);
+  font-weight: 600;
+}
+
+.slide-lead {
+  font-size: clamp(1.05rem, 1.35vw, 1.32rem);
+  line-height: 1.4;
+}
+
+.body-lg {
+  font-size: clamp(1.08rem, 1.32vw, 1.32rem);
+  line-height: 1.45;
+}
+
+.body-md {
+  font-size: clamp(1rem, 1.18vw, 1.18rem);
+  line-height: 1.4;
+}
+
+.body-sm {
+  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+  line-height: 1.38;
+}
+
+.eyebrow-tag {
+  font-size: clamp(0.7rem, 0.85vw, 0.88rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.metric-xl {
+  font-size: clamp(3.4rem, 6.8vw, 7.4rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.metric-lg {
+  font-size: clamp(2.6rem, 4.2vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.metric-md {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.metric-sm {
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.source-note {
+  font-size: clamp(0.82rem, 0.9vw, 0.95rem);
+  line-height: 1.4;
+  color: var(--c-muted);
+}
+
+/* ------------ Contenedores de gráfica ------------ */
+/* Altura explícita: Recharts necesita un alto resuelto para dibujar. */
+.chart-frame {
+  width: 100%;
+  height: clamp(15rem, 34vh, 23rem);
+  min-height: 0;
+}
+
+.chart-frame--tall {
+  height: clamp(18rem, 44vh, 28rem);
+}
+
+.chart-frame--short {
+  height: clamp(12rem, 26vh, 17rem);
+}
+
+/* ------------ Diapositiva: contención y viewport ------------ */
+/* Portada y cierre usan esta base. */
+.presentation-slide {
+  height: 100dvh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: clamp(4.25rem, 7vh, 5rem) clamp(1.5rem, 4vw, 5rem) clamp(2.5rem, 5vh, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.presentation-slide::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.cover-title-block {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-block: clamp(0.5rem, 2vh, 1.25rem);
+}
+
+/* Diapositivas de contenido: encabezado · escenario · fuentes. */
+.presentation-slide--content {
+  padding: 1rem 0 0;
+  justify-content: flex-start;
+}
+
+/* El título comparte renglón con el círculo fijo (left 20px, ancho 40px). */
+.slide-topbar {
+  position: relative;
+  z-index: 20;
+  flex-shrink: 0;
+  padding: 0 clamp(1.25rem, 4vw, 5rem) 0 4.5rem;
+}
+
+.slide-topbar__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 1rem;
+  row-gap: 0.15rem;
+  min-height: 40px;
+  padding-right: 6.5rem;
+}
+
+.slide-topbar .slide-title {
+  font-size: clamp(1.45rem, 2.5vw, 2.7rem);
+  line-height: 1.12;
+}
+
+.slide-stage {
+  position: relative;
+  z-index: 10;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.75rem, 2.2vh, 1.5rem) clamp(1.25rem, 4vw, 5rem);
+}
+
+.slide-fit {
+  width: 100%;
+  max-width: 88rem;
+  flex-shrink: 0;
+  transform-origin: center center;
+}
+
+.slide-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Retícula uniforme y tarjetas de altura común dentro de una misma fila. */
+.slide-content > .grid {
+  align-items: stretch;
+  column-gap: clamp(0.75rem, 1vw, 1rem);
+  row-gap: clamp(0.75rem, 1vw, 1rem);
+}
+
+.slide-content .grid > .fit-card {
+  height: 100%;
+}
+
+/* Ajuste del menú y del indicador para viewports compactos. */
+.deck-controls {
+  max-width: calc(100vw - 5.5rem);
+}
+
+@media (max-width: 480px) {
+  .deck-controls {
+    top: 0.65rem;
+    right: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .deck-controls > :first-child {
+    padding-inline: 0.2rem;
+    gap: 0.15rem;
+  }
+
+  .deck-controls .eyebrow-tag {
+    letter-spacing: 0.04em;
+    padding-inline: 0;
+  }
+}
+
+/* Fuentes: al pie, del lado izquierdo, alineadas a la izquierda. */
+.slide-sources {
+  position: relative;
+  z-index: 20;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0 clamp(1.25rem, 4vw, 5rem) 1.35rem;
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .presentation-slide--content { overflow: hidden; }
+  .slide-stage { overflow: hidden; }
+  /* Deja libre el control de navegación inferior central. */
+  .slide-sources { max-width: calc(50% - 9.5rem); }
+}
+
+@media (max-width: 1023px) {
+  .slide-stage {
+    flex: 1 0 auto;
+    align-items: flex-start;
+  }
+  .slide-sources { padding-bottom: 5rem; }
+}
+
+/* ------------ Línea del tiempo en onda ------------ */
+.wave-timeline {
+  grid-template-rows: auto clamp(4.5rem, 10vh, 6rem) auto;
+  row-gap: 0.5rem;
+}
+
+.wave-row {
+  display: grid;
+  grid-template-columns: repeat(var(--wave-n), minmax(0, 1fr));
+}
+
+.wave-row--top { align-items: end; }
+.wave-row--bottom { align-items: start; }
+
+.wave-card {
+  width: min(16.5rem, 190%);
+}
+
+.wave-track {
+  position: relative;
+}
+
+.wave-track svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.wave-dot {
+  position: absolute;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 9999px;
+  background: var(--c-surface);
+  border: 2px solid var(--c-accent);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wave-dot.is-active {
+  background: var(--c-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-accent) 22%, transparent);
+}
+
+/* ------------ Proporciones generales ------------ */
+@media (min-width: 1280px) and (min-height: 800px) {
+  .slide-title {
+    font-size: clamp(3.2rem, 4.2vw, 4.8rem);
+  }
+}
+
+@media (min-width: 1600px) {
+  .slide-title {
+    font-size: clamp(3.6rem, 4.4vw, 5.2rem);
+  }
+}
+
+/* Laptops de poca altura */
+@media (max-width: 1366px) and (max-height: 768px) {
+  .presentation-slide:not(.presentation-slide--content) {
+    padding: 4.25rem 2rem 1.75rem;
+  }
+
+  .slide-title {
+    font-size: clamp(1.9rem, 4.2vw, 2.7rem);
+  }
+
+  .body-lg { font-size: 1rem; }
+  .body-md { font-size: 0.95rem; }
+  .body-sm { font-size: 0.9rem; }
+  .source-note { font-size: 0.8rem; }
+
+  .metric-xl { font-size: clamp(2.6rem, 7vw, 3.8rem); }
+  .metric-lg { font-size: clamp(2rem, 4.2vw, 2.6rem); }
+  .metric-md { font-size: clamp(1.6rem, 2.6vw, 2rem); }
+  .metric-sm { font-size: clamp(1.3rem, 2vw, 1.7rem); }
+}
+
+/* Tableta */
+@media (max-width: 1024px) {
+  .presentation-slide:not(.presentation-slide--content) {
+    padding: 4.25rem 1.75rem 2rem;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+
+  .chart-frame {
+    height: clamp(14rem, 30vh, 19rem);
+  }
+
+  .chart-frame--tall {
+    height: clamp(16rem, 36vh, 22rem);
+  }
+}
+
+/* Móvil vertical */
+@media (max-width: 640px) {
+  .presentation-slide:not(.presentation-slide--content) {
+    padding: 4.25rem 1.1rem 4.5rem;
+    justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .presentation-slide--content {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide-topbar__row {
+    padding-right: 6rem;
+  }
+
+  .slide-topbar .slide-title {
+    font-size: clamp(1.3rem, 6vw, 1.7rem);
+  }
+
+  .slide-title {
+    font-size: clamp(1.75rem, 7.6vw, 2.35rem);
+  }
+
+  .slide-lead {
+    font-size: 1rem;
+  }
+
+  .body-lg { font-size: 1.02rem; }
+  .body-md { font-size: 0.98rem; }
+  .body-sm { font-size: 0.94rem; }
+  .source-note { font-size: 0.82rem; }
+
+  .metric-xl { font-size: clamp(3rem, 17vw, 4.2rem); }
+  .metric-lg { font-size: clamp(2.4rem, 13vw, 3.2rem); }
+  .metric-md { font-size: clamp(1.9rem, 10vw, 2.5rem); }
+  .metric-sm { font-size: clamp(1.5rem, 8vw, 2rem); }
+
+  /* La gráfica necesita alto fijo en móvil o Recharts la colapsa. */
+  .chart-frame {
+    height: 15rem;
+  }
+
+  .chart-frame--tall {
+    height: 20rem;
+  }
+
+  .chart-frame--short {
+    height: 13rem;
+  }
+}
