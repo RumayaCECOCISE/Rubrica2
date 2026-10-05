@@ -209,16 +209,16 @@ export function SlidePortada() {
 
       {/* Logos institucionales con espacio reservado */}
       <div className="relative z-10 flex flex-wrap items-center justify-center md:justify-start gap-8 md:gap-12">
-        <LogoUNACH style={{ height: 80, width: 'auto' }} />
+        <LogoUNACH style={{ height: 120, width: 'auto' }} />
         <span className="h-12 w-px bg-line" aria-hidden />
-        <LogoCECOCISE style={{ height: 68, width: 'auto' }} />
+        <LogoCECOCISE style={{ height: 120, width: 'auto' }} />
         <span className="h-12 w-px bg-line" aria-hidden />
-        <LogoMDDH style={{ height: 80, width: 'auto' }} />
+        <LogoMDDH style={{ height: 120, width: 'auto' }} />
       </div>
 
       {/* Título en ancho completo con controles sin borde */}
       <div className="cover-title-block relative z-10 w-full">
-        <p className="eyebrow-tag text-muted mb-4 font-sans">
+        <p className="eyebrow-tag text-muted mb-8 font-sans">
           Universidad Autónoma de Chiapas · CECOCISE · Maestría en Defensa de los Derechos Humanos
         </p>
 
@@ -233,7 +233,7 @@ export function SlidePortada() {
             </h1>
           }
           alternate={
-            <h1 className="font-serif font-semibold leading-[1.08] tracking-tight text-fg text-[clamp(1.8rem,3.5vw,3.9rem)]">
+            <h1 className="font-serif font-semibold leading-[1.08] tracking-tight text-fg text-[clamp(1.8rem,3.5vw,3.9rem)] mb-6">
               <NewCaseTitle />
             </h1>
           }
@@ -241,7 +241,7 @@ export function SlidePortada() {
         <TitleVersionControls />
 
         <div
-          className="w-44 h-[3px] my-6 rounded-full"
+          className="w-44 h-[3px] my-10 rounded-full"
           style={{ background: 'linear-gradient(90deg, var(--c-accent), var(--c-accent-2), transparent)' }}
         />
 
@@ -273,7 +273,7 @@ export function SlideIntroduccion() {
   return (
     <Slide>
       <Deco logo="mddh" size={340} className="-top-16 -right-20" opacity={0.04} />
-      <SlideHeader eyebrow="Capítulo I · Exposición y fundamentación jurídica" title="Introducción" />
+      <SlideHeader eyebrow="Exposición y fundamentación jurídica" title="Introducción" />
 
       <Card className="p-6 sm:p-8 lg:p-9 relative overflow-hidden w-full mb-4">
         <p className="eyebrow-tag text-accent mb-2 relative z-10">Objeto de defensa</p>
@@ -335,7 +335,7 @@ export function SlideDescripcionCaso() {
           El incumplimiento del Estado mexicano en la garantía del derecho de acceso, uso y
           aprovechamiento de las Tecnologías de la Información y la Comunicación (TIC) en condiciones de
           igualdad y calidad, en perjuicio de la niñez estudiante de la Escuela Secundaria Técnica No. 156
-          «Real del Bosque», derivada de la falta de capacitación docente, la interrupción de programas de
+          "Real del Bosque", derivada de la falta de capacitación docente, la interrupción de programas de
           formación tecnológica y la ausencia de condiciones institucionales adecuadas para sostener
           procesos educativos mediados por tecnología, en Tuxtla Gutiérrez, Chiapas.
         </p>
@@ -430,7 +430,7 @@ export function SlideDerechoVentana() {
 
       <Card className="p-5 md:p-6 mb-3 w-full">
         <p className="eyebrow-tag text-accent mb-1 tracking-[0.2em]">DERECHO VENTANA</p>
-        <h3 className="font-serif text-[clamp(1.5rem,2.4vw,2.4rem)] font-bold text-accent leading-tight">
+        <h3 className="font-serif text-[clamp(1.5rem,2.4vw,2.4rem)] font-bold leading-tight">
           Derecho de niñas, niños y adolescentes al acceso, uso y aprovechamiento efectivo de las TIC
         </h3>
       </Card>
@@ -534,7 +534,7 @@ export function SlideExposicion() {
 
       <Card className="p-4 sm:p-5 mb-3">
         <p className="font-serif text-[clamp(1.05rem,1.45vw,1.4rem)] text-fg/90 leading-[1.45]">
-          Las y los estudiantes de la Escuela Secundaria Técnica No. 156 «Real del Bosque», en Tuxtla
+          Las y los estudiantes de la Escuela Secundaria Técnica No. 156 "Real del Bosque", en Tuxtla
           Gutiérrez, Chiapas, ven afectado su derecho de acceso, uso y aprovechamiento de las TIC porque
           la escuela no cuenta con las herramientas necesarias, tanto de infraestructura como de apoyo
           docente, pese a que existen políticas públicas que obligan a garantizarlas.
