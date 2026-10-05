@@ -4,13 +4,13 @@ export type LogoName = 'unach' | 'cecocise' | 'mddh';
 
 const LOGOS: Record<LogoName, { src: string; alt: string; label: string; ratio: number }> = {
   unach: {
-    src: '/logos/unach.png',
+    src: '/logos/unach.webp',
     alt: 'Universidad Autónoma de Chiapas',
     label: 'Logo UNACH',
     ratio: 300 / 292,
   },
   cecocise: {
-    src: '/logos/cecocise.png',
+    src: '/logos/cecocise.jpg',
     alt: 'Centro de Estudios para la Construcción de la Ciudadanía y la Seguridad',
     label: 'Logo CECOCISE',
     ratio: 300 / 268,
