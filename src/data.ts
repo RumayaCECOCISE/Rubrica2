@@ -303,7 +303,7 @@ export const INVOLVED_AUTHORITIES = [
 export const VICTIMS = {
   directas: {
     total: 2,
-    label: 'Estudiantes de primer grado y sus núcleo familiar',
+    label: 'Estudiantes de primer grado y su núcleo familiar',
     text: 'Se estudiarán dos casos individuales y sus entornos para identificar cómo las condiciones tecnológicas, familiares e institucionales inciden en el uso educativo de las TIC.',
   },
   indirectas:
