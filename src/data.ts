@@ -303,13 +303,13 @@ export const INVOLVED_AUTHORITIES = [
 export const VICTIMS = {
   directas: {
     total: 2,
-    label: 'estudiantes de primer grado',
+    label: 'Estudiantes de primer grado y sus núcleo familiar',
     text: 'Se estudiarán dos casos individuales y sus entornos para identificar cómo las condiciones tecnológicas, familiares e institucionales inciden en el uso educativo de las TIC.',
   },
   indirectas:
-    'Madres, padres, familiares de primer y segundo grado y personas cuidadoras de las y los estudiantes.',
+    'Madres, padres, familiares de primer, segundo grado y tercer grado y personas cuidadoras de las y los estudiantes.',
   potenciales:
-    'Futuras generaciones de estudiantes que podrían enfrentar las mismas condiciones si no se corrigen las deficiencias; personal docente de la institución; compañeras y compañeros del CECOCISE, quienes acompañan la defensa y sus familias.',
+    'Futuras generaciones de estudiantes, personal docente de la institución, docentes, compañeras y compañeros del CECOCISE, quienes acompañan la defensa y sus familias.',
 };
 
 /* ------------------------------------------------------------------ */

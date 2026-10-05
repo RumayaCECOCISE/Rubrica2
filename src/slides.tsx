@@ -559,19 +559,19 @@ export function SlideExposicion() {
 export function SlideEtapaDefensaResultado() {
   const etapas = [
     {
-      key: '1.5.1',
+      key: '',
       title: 'Orientación',
       text: 'Para que el derecho pueda ejercerse plenamente se requieren condiciones reales de infraestructura, conectividad y factor humano capacitado.',
       icon: BookOpen,
     },
     {
-      key: '1.5.2',
+      key: '',
       title: 'Complicación',
       text: 'La falta de formación docente y la prohibición de dispositivos generan una brecha entre el derecho legal y la realidad del aula.',
       icon: TriangleAlert,
     },
     {
-      key: '1.5.3',
+      key: '',
       title: 'Evaluación',
       text: 'Se documenta la situación escolar sobre dispositivos, conectividad, capacitación docente y efectos concretos en el aprendizaje.',
       icon: FileSearch,
@@ -615,7 +615,7 @@ export function SlideEtapaDefensaResultado() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
         <Card className="p-6">
-          <p className="eyebrow-tag text-accent mb-2">1.5.4 Resultado esperado</p>
+          <p className="eyebrow-tag text-accent mb-2">Resultado esperado</p>
           <p className="body-sm text-fg/90 leading-snug mb-3">
             Acreditar el incumplimiento y la afectación a derechos humanos para exigir a las autoridades
             la adopción de medidas correctivas integrales:
@@ -632,7 +632,7 @@ export function SlideEtapaDefensaResultado() {
 
         <Card className="p-6 flex flex-col justify-between">
           <div>
-            <p className="eyebrow-tag text-accent mb-2">1.5.5 Coda</p>
+            <p className="eyebrow-tag text-accent mb-2">CODA</p>
             <p className="body-sm text-fg/90 leading-relaxed">
               El caso busca pasar de la identificación de una brecha digital a la defensa jurídica efectiva:
               documentar los hechos, determinar los derechos vulnerados, establecer las obligaciones
